@@ -1,0 +1,35 @@
+{
+  "name": "desafio-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex": "node --loader tsx ./node_modules/.bin/knex",
+    "build": "tsc -p tsconfig.json",
+    "start:dev": "npx nodemon",
+    "knex:migrate:make": "knex migrate:make --knexfile ./database/knexfile.ts -x ts",
+    "knex:migrate:latest": "knex --knexfile ./database/knex/knexfile.ts migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile ./database/knex/knexfile.ts migrate:rollback"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cookie": "^9.2.0",
+    "fastify": "^4.24.3",
+    "fastify-plugin": "^4.5.1",
+    "knex": "^3.0.1",
+    "moment": "^2.29.4",
+    "tsx": "^4.6.2",
+    "yarn": "^1.22.21",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "nodemon": "^3.0.1",
+    "sqlite3": "^5.1.6",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  }
+}
